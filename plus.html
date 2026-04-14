@@ -1,22 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
-<script>
-window.addEventListener("click", async () => {
-  console.log("clicked");
-
-  try {
-    await document.documentElement.requestFullscreen();
-  } catch (err) {
-    console.error("fullscreen failed:", err);
-  }
-
-  try {
-    document.body.requestPointerLock();
-  } catch (err) {
-    console.error("pointer lock failed:", err);
-  }
-});
 </script>
     <base href="https://cdn.jsdelivr.net/gh/genizy/web-port@latest/baldi-plus/">
     <meta charset="utf-8">
