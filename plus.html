@@ -2,11 +2,18 @@
 <html lang="en-us">
   <head>
   <script>
-  document.addEventListener("click", () => {
-  document.documentElement.requestFullscreen();
-  document.body.requestPointerLock();
-  });
-  </script>
+document.addEventListener("click", () => {
+  const el = document.documentElement;
+
+  if (el.requestFullscreen) {
+    el.requestFullscreen();
+  }
+
+  if (document.body.requestPointerLock) {
+    document.body.requestPointerLock();
+  }
+});
+</script>
     <base href="https://cdn.jsdelivr.net/gh/genizy/web-port@latest/baldi-plus/">
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
