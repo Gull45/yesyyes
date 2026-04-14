@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
-  <script>
-document.addEventListener("click", () => {
-  const el = document.documentElement;
+<script>
+window.addEventListener("click", async () => {
+  console.log("clicked");
 
-  if (el.requestFullscreen) {
-    el.requestFullscreen();
+  try {
+    await document.documentElement.requestFullscreen();
+  } catch (err) {
+    console.error("fullscreen failed:", err);
   }
 
-  if (document.body.requestPointerLock) {
+  try {
     document.body.requestPointerLock();
+  } catch (err) {
+    console.error("pointer lock failed:", err);
   }
 });
 </script>
