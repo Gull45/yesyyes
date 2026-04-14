@@ -1,1 +1,44 @@
-You aren't supposed to be here.
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title> </title>
+  <style>
+    body {
+      margin: 0;
+      background: black;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    img {
+      width: 400px;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <img id="slideshow" src="https://example.com/image1.jpg" />
+
+  <audio id="sound" src="https://gull45.github.io/yesyyes/snooze.mp3" autoplay loop></audio>
+
+  <script>
+    const images = [
+      "https://gull45.github.io/yesyyes/frame1.png",
+      "https://gull45.github.io/yesyyes/frame2.png"
+    ];
+
+    let index = 0;
+    const img = document.getElementById("slideshow");
+
+    setInterval(() => {
+      index = (index + 1) % images.length;
+      img.src = images[index];
+    }, 1000);
+  </script>
+
+</body>
+</html>
