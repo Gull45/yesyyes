@@ -28,16 +28,14 @@
 
 <body>
 
-
-
     <script>
-const el = document.documentElement;
-
-document.addEventListener("click", () => {
+canvas.addEventListener("click", async () => {
   if (!document.fullscreenElement) {
-    el.requestFullscreen().catch(err => {
-      console.log("Fullscreen failed:", err);
-    });
+    await canvas.requestFullscreen();
+  }
+
+  if (document.pointerLockElement !== canvas) {
+    canvas.requestPointerLock();
   }
 });
 </script>
