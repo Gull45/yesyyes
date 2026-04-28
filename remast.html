@@ -2,32 +2,6 @@
 <html lang="en-us">
 
 <head>
-
-    <script>
-const target = document.body;
-
-document.addEventListener("click", () => {
-  if (document.pointerLockElement !== target) {
-    target.requestPointerLock();
-  }
-});
-
-document.addEventListener("mousemove", (e) => {
-  if (document.pointerLockElement === target) {
-    const dx = e.movementX;
-    const dy = e.movementY;
-    console.log(dx, dy);
-  }
-});
-
-document.addEventListener("pointerlockchange", () => {
-  if (document.pointerLockElement === target) {
-    console.log("Pointer locked");
-  } else {
-    console.log("Pointer unlocked");
-  }
-});
-</script>
     <base href="https://cdn.jsdelivr.net/gh/genizy/web-port@main/baldi-remaster/">
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -53,6 +27,20 @@ document.addEventListener("pointerlockchange", () => {
 </head>
 
 <body>
+
+
+
+    <script>
+const el = document.documentElement;
+
+document.addEventListener("click", () => {
+  if (!document.fullscreenElement) {
+    el.requestFullscreen().catch(err => {
+      console.log("Fullscreen failed:", err);
+    });
+  }
+});
+</script>
     <div id="loading-text" style="color: white; font-size: 48px; font-family: cursive; text-align: center; margin-top: 20px;"> LOADING... </div>
     <canvas id="unity-canvas" tabindex="-1"></canvas>
     <script src="Build/WebGL.loader.js"></script>
