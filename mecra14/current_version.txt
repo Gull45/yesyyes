@@ -1,0 +1,6 @@
+Build Version: V 0.1.4-beta
+Eagtek Version: 4.2
+Ravetek Version: 1.1
+Socket Version: 2.3
+Released at 6-10-23
+Released by : AR-DEV-1 , Lead Dev , EaglerDevs
