@@ -16,13 +16,13 @@
         kill = confirm("Are you sure you want to kill Securly?");
         if (kill) {
           alert("Killing securly in five seconds. When the prompt to close the page shows, click cancel, then click 'prevent this page from making additional dialogues' and click cancel again.");
-          setTimeout(killCurly, 5000);
+          setTimeout(killCurly, 3000);
         }
       }
       function killCurly() {
         var iframe = document.createElement("iframe");
         iframe.id = "nodisplay";
-        iframe.src = "https://poki.com";
+        iframe.src = "https://pizzaedition.com";
         document.body.appendChild(iframe);
         kill = false;
       }
